@@ -52,12 +52,14 @@ const useHeatLayer = (data = [], type = heatmapTypes.ENTRANCES) => {
 
   // On zoom lvl, hex opacity and size can change
   const map = useMapEvent('zoomend', () => {
-    if (!isNil(hexLayer) && map.getZoom() > HEX_DETAILS_ZOOM) {
-      hexLayer
-        .radiusRange(HEX_DETAILS_RADIUS_RANGE)
-        .opacity(HEX_DETAILS_OPACITY);
-    } else {
-      hexLayer.radiusRange(HEX_RADIUS_RANGE).opacity(HEX_OPACITY);
+    if (!isNil(hexLayer)) {
+      if (map.getZoom() > HEX_DETAILS_ZOOM) {
+        hexLayer
+          .radiusRange(HEX_DETAILS_RADIUS_RANGE)
+          .opacity(HEX_DETAILS_OPACITY);
+      } else {
+        hexLayer.radiusRange(HEX_RADIUS_RANGE).opacity(HEX_OPACITY);
+      }
     }
   });
 
