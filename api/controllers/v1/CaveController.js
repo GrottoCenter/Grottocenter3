@@ -13,4 +13,6 @@ module.exports = {
 
   findAll: (req, res) =>
     caveController.findAll(req, res, MappingV1Service.convertToCaveModel),
+
+  create: (req, res) => caveController.create(req, res),
 };
