@@ -59,6 +59,7 @@ module.exports.policies = {
   'v1/EntranceController': {
     '*': false,
     count: true,
+    create: 'tokenAuth',
     find: 'apiKeyAuth',
     findAll: ['apiKeyAuth', 'paginate'],
     findRandom: true,

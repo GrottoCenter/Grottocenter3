@@ -129,7 +129,6 @@ module.exports.routes = {
       allowOrigins: '*',
     },
   },
-
   'GET /api/v1/entrances/:id': {
     controller: 'v1/Entrance',
     action: 'find',
@@ -137,6 +136,7 @@ module.exports.routes = {
       allowOrigins: '*',
     },
   },
+  'POST /api/v1/entrances': 'v1/Entrance.create',
 
   /* Cave controller */
   'DELETE /api/caves/:id': 'Cave.delete',
