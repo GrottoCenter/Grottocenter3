@@ -132,7 +132,7 @@ module.exports.routes = {
   },
 
   /* Cave controller */
-  'DELETE /api/caves/:id': 'Cave.delete',
+  'DELETE /api/v1/caves/:id': 'v1/Cave.delete',
   'GET /api/v1/caves/:id': 'v1/Cave.find',
   'GET /api/v1/caves/findAll': 'v1/Cave.findAll',
   'POST /api/caves/': 'Cave.create',
